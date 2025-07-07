@@ -1,4 +1,4 @@
-i# AGENTS.md
+# AGENTS.md
 
 ## Overview
 
@@ -193,3 +193,47 @@ When adding or modifying an agent:
 3. List expected inputs and outputs in plain language.  
 4. Note any external services or APIs.  
 5. Keep descriptions implementation-agnostic—avoid naming specific functions or classes.
+
+---
+
+## Project Structure & Navigation
+
+- `index.html` bootstraps the entire app
+- `css/` contains `style.css`
+- `js/` holds each agent script (e.g. `grid.js`, `dnd.js`, `splash.js`)
+- No build step; open `index.html` in a browser
+
+## Coding Conventions & Style
+
+- Use two-space indentation and semicolons
+- Prefer plain ES6 without transpilers
+- Keep functions self-contained inside IIFEs
+
+## Testing Instructions
+
+- No automated tests yet
+- Manually verify behaviour by opening `index.html`
+
+## Linting / Static Checks
+
+- None configured
+- Ensure code runs cleanly in modern browsers
+
+## Pull Request & Commit Guidelines
+
+- Use short, imperative commit messages; prefix with `fix:`, `feat:`, `docs:` when applicable
+- Branch name format for docs updates: `codex/<topic>`
+
+## CI / Build Steps
+
+- None
+
+## Hierarchical Overrides
+
+- This file governs the entire repository; no nested overrides
+
+## Self-Update Policy
+
+- After repository changes, re-check this file for accuracy
+- Submit a docs-only PR if updates are needed
+
