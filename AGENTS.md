@@ -150,6 +150,30 @@ includes a visible resize handle element. No external services used.
 
 ---
 
+## Agent: SplashScreen
+
+**Purpose**
+Displays an introductory splash screen with basic instructions and a button to begin sorting.
+
+**Inputs**
+- `localStorage` flag `splashSeen`
+- User clicks on the "Start Sorting" button
+- User toggles the "How to use this app" panel
+
+**Outputs**
+- Visibility toggle for the splash screen and main interface
+
+**Core Logic**
+Shows the splash screen on first load or until dismissed, then remembers the choice in `localStorage`.
+
+**Dependencies**
+Browser `localStorage` only.
+
+**Notes**
+Keep the instruction text accurate with the features that are actually available in the app. Future bug reports will be filed if the splash screen instructions fall out of sync with implemented functionality.
+
+---
+
 ## Planned Agents
 
 | Agent | Rationale | Status |
