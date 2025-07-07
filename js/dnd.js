@@ -3,9 +3,9 @@
 
   function enableUnit(el) {
     interact(el)
-      .draggable({ listeners: { move: onDragMove } })
+      .draggable({ listeners: { start: preventDefault, move: onDragMove } })
       .resizable({ edges: { left: true, right: true, bottom: true, top: true },
-                   listeners: { move: onResizeMove } });
+                   listeners: { start: preventDefault, move: onResizeMove } });
   }
 
   function getCoords(event) {
@@ -28,6 +28,12 @@
       return { x: e.touches[0].clientX, y: e.touches[0].clientY };
     }
     return { x: 0, y: 0 };
+  }
+
+  function preventDefault(event) {
+    if (event && typeof event.preventDefault === 'function') {
+      event.preventDefault();
+    }
   }
 
   function onDragMove(event) {

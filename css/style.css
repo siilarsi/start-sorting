@@ -97,6 +97,14 @@ h1 {
   justify-content: center;
   box-sizing: border-box;
   touch-action: none;
+  -ms-touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.unit * {
+  touch-action: none;
+  -ms-touch-action: none;
 }
 
 .unit .resize-handle {
