@@ -1,0 +1,16 @@
+.kitchen-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(4, minmax(50px, 1fr));
+  gap: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 20px auto;
+}
+
+.kitchen-grid .grid-cell {
+  border: 1px solid #e0e0e0;
+  background-color: #f8f8f8;
+  min-height: 50px;
+  box-sizing: border-box;
+}
