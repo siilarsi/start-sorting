@@ -43,6 +43,15 @@
     return { width: rect.width, height: rect.height, gap };
   }
 
+  function onItemDrop(e) {
+    e.preventDefault();
+    if (!window.InventoryPalette) return;
+    const id = e.dataTransfer.getData('text/plain');
+    if (id) {
+      window.InventoryPalette.placeItem(id, e.currentTarget);
+    }
+  }
+
   function createUnitElement(type) {
     const el = document.createElement('div');
     el.className = `unit ${type}`;
@@ -50,6 +59,8 @@
     const handle = document.createElement('div');
     handle.className = 'resize-handle';
     el.appendChild(handle);
+    el.addEventListener('dragover', (e) => e.preventDefault());
+    el.addEventListener('drop', onItemDrop);
     return el;
   }
 
