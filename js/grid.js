@@ -45,17 +45,23 @@
 
   function onItemDrop(e) {
     e.preventDefault();
-    if (!window.InventoryPalette) return;
+    if (!window.PlacementAssigner) return;
     const id = e.dataTransfer.getData('text/plain');
     if (id) {
-      window.InventoryPalette.placeItem(id, e.currentTarget);
+      window.PlacementAssigner.assign(id, e.currentTarget);
     }
   }
 
   function createUnitElement(type) {
     const el = document.createElement('div');
     el.className = `unit ${type}`;
-    el.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+    const label = document.createElement('span');
+    label.className = 'unit-label';
+    label.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+    el.appendChild(label);
+    const items = document.createElement('ul');
+    items.className = 'unit-items';
+    el.appendChild(items);
     const handle = document.createElement('div');
     handle.className = 'resize-handle';
     el.appendChild(handle);

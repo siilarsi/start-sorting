@@ -12,13 +12,14 @@
     <div class="instructions">
       <button id="toggle-instructions" class="primary-btn">How to use this app</button>
       <div id="instruction-content" class="collapse">
-        <p>Use the toolbar to add cabinets, drawers and shelves to the grid. Drag each unit to reposition it and use the handle to resize.</p>
+        <p>Use the toolbar to add cabinets, drawers and shelves to the grid. Drag each unit to reposition it and use the handle to resize. Add items in the sidebar and drop them onto your units. Tap the home button to return here any time.</p>
       </div>
     </div>
     <button id="start-btn" class="primary-btn">Start Sorting</button>
   </div>
 
   <div id="app" style="display: none;">
+    <button id="home-btn" class="home-btn" style="display:none;">🏠</button>
     <h1>Kitchen Sorter</h1>
 
     <div id="unit-toolbar" class="toolbar">
@@ -43,5 +44,6 @@
   <script src="js/grid.js" defer></script>
   <script src="js/dnd.js" defer></script>
   <script src="js/inventory.js" defer></script>
+  <script src="js/placement.js" defer></script>
 </body>
 </html>
