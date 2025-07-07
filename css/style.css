@@ -1,3 +1,55 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f7f5f2;
+  color: #333;
+}
+
+h1 {
+  color: #2a726a;
+  text-align: center;
+}
+
+.primary-btn {
+  background-color: #2a726a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background-color: #245c55;
+}
+
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.instructions {
+  margin: 20px 0;
+  max-width: 400px;
+}
+
+.collapse {
+  display: none;
+}
+
+.collapse.open {
+  display: block;
+}
+
+#app {
+  padding: 20px;
+}
+
 .kitchen-grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -9,20 +61,30 @@
 }
 
 .kitchen-grid .grid-cell {
-  border: 1px solid #e0e0e0;
-  background-color: #f8f8f8;
+  border: 1px solid #cfd8d6;
+  background-color: #eef1f0;
   min-height: 50px;
   box-sizing: border-box;
 }
+
 
 .toolbar {
   text-align: center;
   margin: 10px 0;
 }
 
+
 .toolbar button {
   margin-right: 6px;
   padding: 6px 12px;
+  border: none;
+  background-color: #2a726a;
+  color: #fff;
+  cursor: pointer;
+}
+
+.toolbar button:hover {
+  background-color: #245c55;
 }
 
 .unit {
@@ -48,14 +110,17 @@
   border-radius: 50%;
 }
 
+
 .unit.cabinet {
-  background-color: #8b4513;
+  background-color: #6b4f2a;
 }
+
 
 .unit.drawer {
-  background-color: #708090;
+  background-color: #5f6a7d;
 }
 
+
 .unit.shelf {
-  background-color: #228b22;
+  background-color: #3f8a4b;
 }

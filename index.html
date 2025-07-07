@@ -7,17 +7,31 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Kitchen Sorter</h1>
-
-  <div id="unit-toolbar" class="toolbar">
-    <button data-unit="cabinet">Cabinet</button>
-    <button data-unit="drawer">Drawer</button>
-    <button data-unit="shelf">Shelf</button>
+  <div id="splash-screen" class="splash-screen">
+    <h1>Kitchen Sorter</h1>
+    <div class="instructions">
+      <button id="toggle-instructions" class="primary-btn">How to use this app</button>
+      <div id="instruction-content" class="collapse">
+        <p>Use the toolbar to add cabinets, drawers and shelves to the grid. Drag each unit to reposition it and use the handle to resize.</p>
+      </div>
+    </div>
+    <button id="start-btn" class="primary-btn">Start Sorting</button>
   </div>
 
-  <div id="grid-root"></div>
+  <div id="app" style="display: none;">
+    <h1>Kitchen Sorter</h1>
+
+    <div id="unit-toolbar" class="toolbar">
+      <button data-unit="cabinet">Cabinet</button>
+      <button data-unit="drawer">Drawer</button>
+      <button data-unit="shelf">Shelf</button>
+    </div>
+
+    <div id="grid-root"></div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+  <script src="js/splash.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/grid.js" defer></script>
   <script src="js/dnd.js" defer></script>
