@@ -14,3 +14,36 @@
   min-height: 50px;
   box-sizing: border-box;
 }
+
+.toolbar {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.toolbar button {
+  margin-right: 6px;
+  padding: 6px 12px;
+}
+
+.unit {
+  position: absolute;
+  border: 2px solid #333;
+  color: #fff;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.unit.cabinet {
+  background-color: #8b4513;
+}
+
+.unit.drawer {
+  background-color: #708090;
+}
+
+.unit.shelf {
+  background-color: #228b22;
+}
