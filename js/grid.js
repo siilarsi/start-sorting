@@ -58,20 +58,58 @@
     el.style.height = h * height + gap * (h - 1) + 'px';
   }
 
+  function findUnit(el) {
+    return units.find(u => u.el === el);
+  }
+
+  function moveUnit(el, col, row) {
+    const u = findUnit(el);
+    if (!u) return;
+    col = Math.max(0, Math.min(cols - u.w, col));
+    row = Math.max(0, Math.min(rows - u.h, row));
+    u.col = col;
+    u.row = row;
+    placeUnit(u.el, u.col, u.row, u.w, u.h);
+  }
+
+  function resizeUnit(el, w, h) {
+    const u = findUnit(el);
+    if (!u) return;
+    w = Math.max(1, Math.min(cols - u.col, w));
+    h = Math.max(1, Math.min(rows - u.row, h));
+    u.w = w;
+    u.h = h;
+    placeUnit(u.el, u.col, u.row, u.w, u.h);
+  }
+
+  function getMetrics() {
+    return computeMetrics();
+  }
+
   function addUnit(type) {
     if (!gridEl || !defaultSizes[type]) return;
     const size = defaultSizes[type];
     const el = createUnitElement(type);
     placeUnit(el, 0, 0, size.w, size.h);
     gridEl.appendChild(el);
-    units.push({ type, el, col: 0, row: 0, w: size.w, h: size.h });
+    const unit = { type, el, col: 0, row: 0, w: size.w, h: size.h };
+    units.push(unit);
+    el.dataset.unitIndex = units.length - 1;
+    if (window.DragResize && window.DragResize.enableUnit) {
+      window.DragResize.enableUnit(el);
+    }
   }
 
   function onResize() {
     units.forEach(u => placeUnit(u.el, u.col, u.row, u.w, u.h));
   }
 
-  window.GridUnitManager = { addUnit };
+  window.GridUnitManager = {
+    addUnit,
+    moveUnit,
+    resizeUnit,
+    getMetrics
+  };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {

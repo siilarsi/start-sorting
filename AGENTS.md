@@ -126,6 +126,29 @@ No external network calls; suitable for full offline use.
 
 ---
 
+## Agent: DragResizeHandler
+
+**Purpose**
+Enables dragging and resizing of storage units on the grid while snapping to cell boundaries.
+
+**Inputs**
+- DOM elements representing units
+- Pointer drag and resize events
+
+**Outputs**
+- Updated unit position and size via `GridUnitManager`
+
+**Core Logic**
+Uses a drag-and-drop library to map pointer movement to grid coordinates, clamping values so units remain within the grid.
+
+**Dependencies**
+Relies on `GridUnitManager` for dimension metrics and state updates.
+
+**Notes**
+Provides visual feedback during interaction; no external services used.
+
+---
+
 ## Planned Agents
 
 | Agent | Rationale | Status |
