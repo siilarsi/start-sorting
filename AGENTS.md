@@ -42,8 +42,8 @@ Keeps the catalogue of items (plates, mixer, bread knife, etc.), tracks total co
 - Drop events from placement actions  
 - Optional manual count edits
 
-**Outputs**  
-- `items` map with `total` and `placed[]` arrays  
+**Outputs**
+- `items` map with `total` and `placed[]` arrays
 - Badge updates reflecting remaining quantity
 
 **Core Logic**  
@@ -52,8 +52,9 @@ Decrements totals on placement, prevents negative counts, and re-increments on i
 **Dependencies**  
 Relies on `GridUnitManager` events to stay in sync.
 
-**Notes**  
-Free-text item names; duplicates are merged case-insensitively.
+**Notes**
+Free-text item names; duplicates are merged case-insensitively. When a count
+drops to zero the palette entry is disabled until quantity increases.
 
 ---
 
@@ -76,8 +77,10 @@ Single responsibility layer that mediates between UI drag-and-drop and state mut
 **Dependencies**  
 Receives grid and item maps from `GridUnitManager` and `InventoryPalette`.
 
-**Notes**  
+**Notes**
 If an item has already reached its total count, further drops are blocked.
+The view layer shows the placed item name inside the unit when placement
+is successful.
 
 ---
 
@@ -171,6 +174,28 @@ Browser `localStorage` only.
 
 **Notes**
 Keep the instruction text accurate with the features that are actually available in the app. Future bug reports will be filed if the splash screen instructions fall out of sync with implemented functionality.
+
+---
+
+## Agent: HomeButton
+
+**Purpose**
+Provides a persistent navigation control to return to the splash screen.
+
+**Inputs**
+- User taps the home icon
+
+**Outputs**
+- Toggles visibility of the main interface and splash screen
+
+**Core Logic**
+Simple click handler that hides `#app`, shows `#splash-screen`, and hides itself.
+
+**Dependencies**
+Browser `localStorage` only.
+
+**Notes**
+Visible on every screen except the splash screen.
 
 ---
 

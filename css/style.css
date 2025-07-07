@@ -210,3 +210,36 @@ h1 {
 .qty-btn:hover {
   background-color: #245c55;
 }
+
+.item-entry.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.unit-items {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  font-size: 0.6em;
+  color: #fff;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.home-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #2a726a;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.home-btn:hover {
+  background: #245c55;
+}

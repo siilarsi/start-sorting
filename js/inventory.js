@@ -30,14 +30,19 @@
     render();
   }
 
-  function placeItem(id, unitEl) {
-    const item = items[id];
-    if (!item) return false;
-    if (remaining(item) <= 0) return false;
-    item.placed.push(unitEl);
-    render();
-    return true;
-  }
+    function placeItem(id, unitEl) {
+      const item = items[id];
+      if (!item) return false;
+      if (remaining(item) <= 0) return false;
+      const unitId = unitEl.dataset.unitIndex;
+      item.placed.push(unitId);
+      render();
+      return true;
+    }
+
+    function getItem(id) {
+      return items[id];
+    }
 
   function onInputKey(e) {
     if (e.key === 'Enter') {
@@ -49,7 +54,8 @@
   function createEntry(id, item) {
     const li = document.createElement('li');
     li.className = 'item-entry';
-    li.draggable = true;
+    li.draggable = remaining(item) > 0;
+    if (!li.draggable) li.classList.add('disabled');
     li.dataset.itemId = id;
 
     const label = document.createElement('span');
@@ -76,6 +82,10 @@
     li.appendChild(dec);
 
     li.addEventListener('dragstart', (e) => {
+      if (remaining(item) <= 0) {
+        e.preventDefault();
+        return;
+      }
       e.dataTransfer.setData('text/plain', id);
     });
 
@@ -100,7 +110,8 @@
 
   window.InventoryPalette = {
     addItem,
-    placeItem
+    placeItem,
+    getItem
   };
 
   if (document.readyState === 'loading') {
