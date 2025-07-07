@@ -145,7 +145,8 @@ Uses a drag-and-drop library to map pointer movement to grid coordinates, clampi
 Relies on `GridUnitManager` for dimension metrics and state updates.
 
 **Notes**
-Provides visual feedback during interaction; no external services used.
+Provides visual feedback during interaction for both mouse and touch input;
+includes a visible resize handle element. No external services used.
 
 ---
 
