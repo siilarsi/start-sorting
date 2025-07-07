@@ -47,6 +47,9 @@
     const el = document.createElement('div');
     el.className = `unit ${type}`;
     el.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+    const handle = document.createElement('div');
+    handle.className = 'resize-handle';
+    el.appendChild(handle);
     return el;
   }
 

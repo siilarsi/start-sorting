@@ -12,12 +12,22 @@
     const grid = document.getElementById('kitchen-grid');
     const rect = grid.getBoundingClientRect();
     const metrics = window.GridUnitManager.getMetrics();
-    const x = event.client.x - rect.left;
-    const y = event.client.y - rect.top;
+    const point = pointerCoords(event);
+    const x = point.x - rect.left;
+    const y = point.y - rect.top;
     return {
       col: Math.round(x / (metrics.width + metrics.gap)),
       row: Math.round(y / (metrics.height + metrics.gap))
     };
+  }
+
+  function pointerCoords(e) {
+    if (e.client) return { x: e.client.x, y: e.client.y };
+    if (typeof e.clientX === 'number') return { x: e.clientX, y: e.clientY };
+    if (e.touches && e.touches[0]) {
+      return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    }
+    return { x: 0, y: 0 };
   }
 
   function onDragMove(event) {
