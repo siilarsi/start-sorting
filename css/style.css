@@ -132,3 +132,81 @@ h1 {
 .unit.shelf {
   background-color: #3f8a4b;
 }
+
+.main-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+#grid-root {
+  flex: 1;
+  position: relative;
+}
+
+.item-sidebar {
+  width: 200px;
+  background-color: #eef1f0;
+  border-right: 1px solid #cfd8d6;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.item-sidebar h2 {
+  margin-top: 0;
+  color: #2a726a;
+}
+
+.item-sidebar input {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item-entry {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #cfd8d6;
+  padding: 4px;
+  margin-bottom: 6px;
+  cursor: grab;
+}
+
+.item-entry:active {
+  cursor: grabbing;
+}
+
+.item-label {
+  flex-grow: 1;
+}
+
+.item-count {
+  background-color: #2a726a;
+  color: #fff;
+  border-radius: 10px;
+  padding: 2px 6px;
+  font-size: 0.8em;
+  margin-left: 4px;
+}
+
+.qty-btn {
+  background-color: #2a726a;
+  color: #fff;
+  border: none;
+  width: 20px;
+  height: 20px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.qty-btn:hover {
+  background-color: #245c55;
+}

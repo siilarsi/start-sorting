@@ -27,7 +27,14 @@
       <button data-unit="shelf">Shelf</button>
     </div>
 
-    <div id="grid-root"></div>
+    <div id="main-layout" class="main-layout">
+      <div id="item-sidebar" class="item-sidebar">
+        <h2>Items</h2>
+        <input id="new-item-input" type="text" placeholder="Add item" />
+        <ul id="item-list"></ul>
+      </div>
+      <div id="grid-root"></div>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
@@ -35,5 +42,6 @@
   <script src="js/main.js" defer></script>
   <script src="js/grid.js" defer></script>
   <script src="js/dnd.js" defer></script>
+  <script src="js/inventory.js" defer></script>
 </body>
 </html>
