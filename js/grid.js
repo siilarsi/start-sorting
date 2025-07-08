@@ -7,7 +7,8 @@
   const defaultSizes = {
     cabinet: { w: 2, h: 3 },
     drawer: { w: 1, h: 1 },
-    shelf: { w: 2, h: 1 }
+    shelf: { w: 2, h: 1 },
+    worktop: { w: 4, h: 1 }
   };
 
   function createGridCell() {

@@ -27,8 +27,9 @@ Applies snap-to-grid arithmetic and prevents overlap through simple collision ch
 **Dependencies**  
 None beyond in-browser state.
 
-**Notes**  
+**Notes**
 Abstract sizes only; no real-world measurements.
+Default unit sizes: cabinet 2×3, drawer 1×1, shelf 2×1, worktop 4×1.
 
 ---
 
