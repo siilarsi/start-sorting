@@ -133,6 +133,10 @@ h1 {
   background-color: #3f8a4b;
 }
 
+.unit.worktop {
+  background-color: #9b774f;
+}
+
 .main-layout {
   display: flex;
   align-items: flex-start;
